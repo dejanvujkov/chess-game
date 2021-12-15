@@ -14,13 +14,15 @@ export class Player {
     this.figures = this.initializeFigures(color);
   }
 
-  figureEaten(figure: Figure): void {
-    figure.eaten = true;
-    this.pile.push(figure);
+  public eat(figure: Figure): void {
+    if (figure.color != this.color) {
+      figure.eaten = true;
+      this.pile.push(figure);
+    }
   }
 
   private initializeFigures(color: Color): Figure[] {
     // TODO: initializeFigures based on color of the player
-    return []
+    return [];
   }
 }

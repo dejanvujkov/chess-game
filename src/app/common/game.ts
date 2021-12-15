@@ -7,9 +7,9 @@ export class Game {
   public turn?: Player; // which player is on the move
   public started: boolean;
 
-  constructor(player1: Player, player2: Player) {
-    this.player1 = player1;
-    this.player2 = player2;
+  constructor(player1Name: string, player2Name: string) {
+    this.player1 = new Player(Color.White, player1Name);
+    this.player2 = new Player(Color.Black, player2Name);
     this.turn = undefined;
     this.started = false;
   }
@@ -20,6 +20,6 @@ export class Game {
   }
 
   endTurn(): void {
-    this.turn = this.player1 === this.turn ? this.player1 : this.player2;
+    this.turn = this.player1 === this.turn ? this.player2 : this.player1;
   }
 }

@@ -1,10 +1,12 @@
 ﻿import {Color} from "./enums/color";
 import {FigureNames} from "./enums/figureNames";
+import {Position} from "./position";
 
 export interface Figure {
   color: Color;
   eaten: boolean;
   name: FigureNames;
-  x: number;
-  y: number;
+  position: Position;
+
+  move(positionTo: Position): void;
 }
