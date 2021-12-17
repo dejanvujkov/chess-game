@@ -1,5 +1,7 @@
 ﻿import {Color} from "./enums/color";
 import {Figure} from "./figure";
+import {Position} from "./position";
+import {Pawn} from "../figures/pawn";
 
 export class Player {
   public color: Color;
@@ -22,7 +24,6 @@ export class Player {
   }
 
   private initializeFigures(color: Color): Figure[] {
-    // TODO: initializeFigures based on color of the player
     return [];
   }
 }

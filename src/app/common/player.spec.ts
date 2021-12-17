@@ -14,7 +14,7 @@ describe('Player', () => {
   it('should eat work', () => {
     let player = new Player(Color.White, "player");
     expect(player).toBeTruthy();
-    let figure = new Pawn(Color.Black, new Position(1, 0));
+    let figure = new Pawn(Color.Black, new Position(6, 0));
     player.eat(figure);
     expect(figure.eaten).toBeTrue();
     expect(player.pile).toContain(figure);
