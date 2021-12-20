@@ -18,6 +18,14 @@ describe('Pawn', () => {
     expect(pawn.hasMoved).toBeTrue();
   });
 
+  it('should not move', () => {
+    let pawn = new Pawn(Color.White, new Position(1, 1));
+    expect(pawn).toBeTruthy();
+    pawn.move(new Position(5, 5));
+    expect(pawn.position).toEqual(new Position(1, 1));
+    expect(pawn.hasMoved).toBeFalse();
+  });
+
   it('should have 2 moves', () => {
     let whitePawn = new Pawn(Color.White, new Position(0, 1));
     expect(whitePawn.availableMoves).toBeDefined();

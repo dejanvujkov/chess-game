@@ -19,6 +19,7 @@ export abstract class Figure {
   }
 
   move(positionTo: Position): void {
+    if (!this.availableMoves?.some(p => p.x === positionTo.x && p.y === positionTo.y)) return;
     this.position = positionTo;
     if (!this.hasMoved) this.hasMoved = true;
     this.availableMoves = this.calculateAvailableMoves?.();
